@@ -2,11 +2,26 @@ package com.santander.digital.bank.Entities.Account;
 
 public abstract class Account implements IAccount {
 
-    private int id;
-    private int agency;
-    private double balance;
+    protected long id;
+    protected int agency;
+    protected double balance;
 
-    public int getId() {
+    @Override
+    public void withdraw(double value) {
+
+    }
+
+    @Override
+    public void deposit(double value) {
+
+    }
+
+    @Override
+    public void transfer(Account account, double value) {
+
+    }
+
+    public long getId() {
         return id;
     }
 
@@ -18,3 +33,5 @@ public abstract class Account implements IAccount {
         return balance;
     }
 }
+
+
