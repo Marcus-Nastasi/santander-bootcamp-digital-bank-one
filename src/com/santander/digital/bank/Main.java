@@ -12,11 +12,16 @@ public class Main {
             Bank bank = new Bank("Santander");
             bank.getAccounts().forEach(a -> a.deposit(100.00));
 
-            List<Account> sa = bank.getAccounts().stream().filter(a -> a instanceof SavingsAccount).toList();
-            sa.forEach(Account::bankStatement);
+            bank.getAccounts().stream()
+                    .filter(a -> a instanceof SavingsAccount)
+                    .forEach(a -> {
+                        ((SavingsAccount) a).profit();
+                        a.bankStatement();
+                    });
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
 }
+
 
