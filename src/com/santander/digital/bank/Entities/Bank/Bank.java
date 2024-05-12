@@ -2,6 +2,7 @@ package com.santander.digital.bank.Entities.Bank;
 
 import com.santander.digital.bank.Entities.Account.Account;
 import com.santander.digital.bank.Entities.Account.CurrentAccount;
+import com.santander.digital.bank.Entities.Account.SavingsAccount;
 import com.santander.digital.bank.Entities.Client.Client;
 import com.santander.digital.bank.Entities.Exceptions.BankException;
 
@@ -47,11 +48,11 @@ public class Bank {
 
         List<Account> accounts1 = Arrays.asList(
             new CurrentAccount(1046, clients1.get(0)),
-            new CurrentAccount(1046, clients1.get(1)),
+            new SavingsAccount(1046, clients1.get(1)),
             new CurrentAccount(1003, clients1.get(2)),
-            new CurrentAccount(1017, clients1.get(3)),
+            new SavingsAccount(1017, clients1.get(3)),
             new CurrentAccount(1032, clients1.get(4)),
-            new CurrentAccount(1078, clients1.get(5))
+            new SavingsAccount(1078, clients1.get(5))
         );
 
         this.clients.addAll(clients1);
