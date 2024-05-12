@@ -1,6 +1,7 @@
 package com.santander.digital.bank.Entities.Account;
 
 import com.santander.digital.bank.Entities.Client.Client;
+import com.santander.digital.bank.Entities.Exceptions.AccountException;
 
 public abstract class Account implements IAccount {
 
@@ -10,7 +11,8 @@ public abstract class Account implements IAccount {
     protected double balance;
 
     @Override
-    public void withdraw(double value) {
+    public void withdraw(double value) throws AccountException {
+        if (this.balance < value) throw new AccountException("Error: balance lower than value " + value);
         balance -= value;
     }
 
@@ -20,7 +22,8 @@ public abstract class Account implements IAccount {
     }
 
     @Override
-    public void transfer(Account account, double value) {
+    public void transfer(Account account, double value) throws AccountException {
+        if (this.balance < value) throw new AccountException("Error: balance lower than value " + value);
         this.withdraw(value);
         account.deposit(value);
     }
