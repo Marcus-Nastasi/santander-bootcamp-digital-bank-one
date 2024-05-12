@@ -31,12 +31,12 @@ public abstract class Account implements IAccount {
     @Override
     public void bankStatement() {
         if (this instanceof CurrentAccount || this instanceof SavingsAccount) {
-            System.out.println(this.toString());
+            System.out.println(this.toString() + "\n");
             return;
         }
 
         System.out.printf("--- %s's Account ---\n", this.client.getName());
-        System.out.println(this.toString());
+        System.out.println(this.toString() + "\n");
     }
 
     @Override
