@@ -22,6 +22,16 @@ public abstract class Account implements IAccount {
         account.deposit(value);
     }
 
+    @Override
+    public void bankStatement() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+        return("Account{" + "id=" + id + ", agency=" + agency + ", balance=" + balance + '}');
+    }
+
     public long getId() {
         return id;
     }
