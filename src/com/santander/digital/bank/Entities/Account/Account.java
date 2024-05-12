@@ -1,7 +1,10 @@
 package com.santander.digital.bank.Entities.Account;
 
+import com.santander.digital.bank.Entities.Client.Client;
+
 public abstract class Account implements IAccount {
 
+    protected Client client;
     protected long id;
     protected int agency;
     protected double balance;
