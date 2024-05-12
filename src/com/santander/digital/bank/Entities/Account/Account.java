@@ -30,7 +30,12 @@ public abstract class Account implements IAccount {
 
     @Override
     public void bankStatement() {
-        System.out.printf("--- %s's Account ---", this.client.getName());
+        if (this instanceof CurrentAccount) {
+            System.out.println(this.toString());
+            return;
+        }
+
+        System.out.printf("--- %s's Account ---\n", this.client.getName());
         System.out.println(this.toString());
     }
 

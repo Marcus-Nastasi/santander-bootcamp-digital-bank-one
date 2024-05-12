@@ -15,7 +15,7 @@ public class SavingsAccount extends Account {
 
     @Override
     public void bankStatement() {
-        System.out.printf("--- %s's Savings Account ---", this.client.getName());
+        System.out.printf("--- %s's Savings Account ---\n", this.client.getName());
         super.bankStatement();
     }
 }
