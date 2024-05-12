@@ -15,7 +15,7 @@ public class CurrentAccount extends Account {
 
     @Override
     public void bankStatement() {
-        System.out.printf("--- %s's Current Account ---", client.getName());
+        System.out.printf("--- %s's Current Account ---", this.client.getName());
         super.bankStatement();
     }
 }

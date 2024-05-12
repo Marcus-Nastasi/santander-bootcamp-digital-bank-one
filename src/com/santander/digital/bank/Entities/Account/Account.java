@@ -27,12 +27,16 @@ public abstract class Account implements IAccount {
 
     @Override
     public void bankStatement() {
+        System.out.printf("--- %s's Account ---", this.client.getName());
         System.out.println(this.toString());
     }
 
     @Override
     public String toString() {
-        return("Account{" + "id=" + id + ", agency=" + agency + ", balance=" + balance + '}');
+        return(
+            "Account{" + "client=" + client + ", id=" + id +
+            ", agency=" + agency + ", balance=" + balance + '}'
+        );
     }
 
     public long getId() {
