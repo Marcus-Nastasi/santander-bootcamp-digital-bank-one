@@ -3,6 +3,7 @@ package com.santander.digital.bank.Entities.Bank;
 import com.santander.digital.bank.Entities.Account.Account;
 import com.santander.digital.bank.Entities.Account.CurrentAccount;
 import com.santander.digital.bank.Entities.Client.Client;
+import com.santander.digital.bank.Entities.Exceptions.BankException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class Bank {
     private final ArrayList<Client> clients = new ArrayList<>();
 
     public Bank(String name) throws Exception {
+        if (name == null) throw new BankException("Error: bank does not have a name.");
         this.name = name;
         this.init();
     }
