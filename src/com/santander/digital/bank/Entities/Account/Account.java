@@ -30,7 +30,7 @@ public abstract class Account implements IAccount {
 
     @Override
     public void bankStatement() {
-        if (this instanceof CurrentAccount) {
+        if (this instanceof CurrentAccount || this instanceof SavingsAccount) {
             System.out.println(this.toString());
             return;
         }

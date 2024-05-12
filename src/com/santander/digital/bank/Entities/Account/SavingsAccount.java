@@ -18,6 +18,10 @@ public class SavingsAccount extends Account {
         System.out.printf("--- %s's Savings Account ---\n", this.client.getName());
         super.bankStatement();
     }
+
+    public void profit() {
+        this.balance += (this.balance * 0.02);
+    }
 }
 
 
