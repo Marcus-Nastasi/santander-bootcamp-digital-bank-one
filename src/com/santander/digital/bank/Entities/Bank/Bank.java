@@ -35,7 +35,7 @@ public class Bank {
     }
 
     public void init() throws Exception {
-        long id = 0;
+        long id = 1;
 
         List<Client> clients1 = Arrays.asList(
             new Client(id++, "Gary Bean", "223-230-122-08"),
