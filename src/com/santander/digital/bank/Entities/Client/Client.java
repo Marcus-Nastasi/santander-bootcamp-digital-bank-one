@@ -4,10 +4,12 @@ public class Client {
 
     private long id;
     private String name;
+    private String cpf;
 
-    public Client(long id, String name) {
+    public Client(long id, String name, String cpf) {
         this.id = id;
         this.name = name;
+        this.cpf = cpf;
     }
 
     public long getId() {
@@ -16,6 +18,11 @@ public class Client {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return("Client{" + "id=" + id + ", name='" + name + '\'' + ", cpf='" + cpf + '\'' + '}');
     }
 }
 
