@@ -4,6 +4,8 @@ import com.santander.digital.bank.Entities.Account.Account;
 import com.santander.digital.bank.Entities.Account.SavingsAccount;
 import com.santander.digital.bank.Entities.Bank.Bank;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         try {
@@ -11,13 +13,7 @@ public class Main {
             bank.init();
             bank.getAccounts().forEach(a -> a.deposit(100.00));
 
-            System.out.println("--- Savings accounts ---\n");
-            bank.getAccounts().forEach(a -> {
-                if (a instanceof SavingsAccount) {
-                    ((SavingsAccount) a).profit();
-                    System.out.println(a);
-                }
-            });
+            System.out.println(bank.getAccounts());
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
