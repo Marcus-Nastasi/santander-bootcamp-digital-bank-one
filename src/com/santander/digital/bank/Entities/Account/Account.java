@@ -8,17 +8,18 @@ public abstract class Account implements IAccount {
 
     @Override
     public void withdraw(double value) {
-
+        balance -= value;
     }
 
     @Override
     public void deposit(double value) {
-
+        balance += value;
     }
 
     @Override
     public void transfer(Account account, double value) {
-
+        this.withdraw(value);
+        account.deposit(value);
     }
 
     public long getId() {
